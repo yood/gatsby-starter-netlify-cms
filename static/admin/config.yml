@@ -6,6 +6,13 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "author"
+    label: "Author"
+    folder: "data/authors"
+    create: true
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
@@ -20,6 +27,7 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Author", name: "author", widget: "relation", searchFields: ["name"], valueField: "name" }
 
   - name: "pages"
     label: "Pages"
